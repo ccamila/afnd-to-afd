@@ -1,7 +1,7 @@
 {
     "configs": {
         "alpha": [ "a", "b"],
-        "start": "q0",
-        "end": ["q2", "q3"]
+        "start": "q1",
+        "end": ["q4"]
     }
 }

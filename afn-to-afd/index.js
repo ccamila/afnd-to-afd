@@ -1,5 +1,5 @@
-const { sample } = require("./samples/sample.json")
-const { configs } = require("./samples/configs.json")
+const { sample } = require("./samples/sample02.json")
+const { configs } = require("./samples/configs02.json")
 
 // configs do afnd
 const afnd = sample;
@@ -46,6 +46,7 @@ const updateAFD = (state, array) => {
     }
 }
 
+// Checa se o estado já existe no Afd
 const isAFDState = (newState, afdState)  => {
     if(newState.length !== afdState.length) return false;
     for (let j = 0; j < afdState.length; j++) {
@@ -56,7 +57,7 @@ const isAFDState = (newState, afdState)  => {
     return true;
 }
 
-
+// CHeca quais são os novos estados criados 
 const nextStep = (state_row) => {
     for (const row in state_row){
         const actual = state_row[row];
@@ -96,7 +97,9 @@ const convertAFNDtoAFD = () => {
 
 convertAFNDtoAFD();
 
+console.log("===============AFND=============");
 console.table(afnd);
+console.log("================AFD=============");
 console.table(afd);
 
 // console.info(afd)
